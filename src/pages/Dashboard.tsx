@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -65,44 +64,44 @@ const Dashboard = () => {
       <div 
         className="min-h-screen relative"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=800&fit=crop')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop&crop=center')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
         }}
       >
-        {/* Blurred overlay */}
-        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        {/* Enhanced blurred overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/40 to-indigo-900/30 backdrop-blur-md"></div>
         
         <div className="relative z-10">
-          {/* Header */}
-          <header className="bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+          {/* Header with enhanced contrast */}
+          <header className="bg-white/95 backdrop-blur-lg border-b border-white/20 shadow-xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center h-16">
                 <h1 className="text-2xl font-bold text-gray-900 drop-shadow-sm">Good morning, Sarah!</h1>
                 <div className="flex items-center space-x-4">
                   <Link to="/programs">
-                    <Button variant="outline" size="sm" className="bg-white/80 text-gray-900 border-gray-300">
+                    <Button variant="outline" size="sm" className="bg-white/90 text-gray-900 border-gray-300 hover:bg-white shadow-md">
                       <Bookmark className="w-4 h-4 mr-2" />
                       Programs
                     </Button>
                   </Link>
                   <Link to="/profile">
-                    <Button variant="outline" size="sm" className="bg-white/80 text-gray-900 border-gray-300">
+                    <Button variant="outline" size="sm" className="bg-white/90 text-gray-900 border-gray-300 hover:bg-white shadow-md">
                       <User className="w-4 h-4 mr-2" />
                       Profile
                     </Button>
                   </Link>
                   <Link to="/manage-payments">
-                    <Button variant="outline" size="sm" className="bg-white/80 text-gray-900 border-gray-300">
+                    <Button variant="outline" size="sm" className="bg-white/90 text-gray-900 border-gray-300 hover:bg-white shadow-md">
                       <CreditCard className="w-4 h-4 mr-2" />
                       Billing
                     </Button>
                   </Link>
-                  <Button variant="outline" size="sm" className="bg-white/80 text-gray-900 border-gray-300">
+                  <Button variant="outline" size="sm" className="bg-white/90 text-gray-900 border-gray-300 hover:bg-white shadow-md">
                     <Settings className="w-4 h-4" />
                   </Button>
-                  <Button variant="destructive" size="sm" onClick={handleSignOut} className="bg-red-600 hover:bg-red-700">
+                  <Button variant="destructive" size="sm" onClick={handleSignOut} className="bg-red-600 hover:bg-red-700 shadow-md">
                     <LogOut className="w-4 h-4 mr-2" />
                     Sign Out
                   </Button>
@@ -112,9 +111,9 @@ const Dashboard = () => {
           </header>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {/* Stats Overview */}
+            {/* Stats Overview with enhanced contrast */}
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="bg-white/90 backdrop-blur-sm shadow-lg border-0">
+              <Card className="bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium text-gray-900">Today's Progress</CardTitle>
                   <Calendar className="h-4 w-4 text-green-600" />
@@ -126,7 +125,7 @@ const Dashboard = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/90 backdrop-blur-sm shadow-lg border-0">
+              <Card className="bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium text-gray-900">Weekly Streak</CardTitle>
                   <TrendingUp className="h-4 w-4 text-green-600" />
@@ -137,7 +136,7 @@ const Dashboard = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-white/90 backdrop-blur-sm shadow-lg border-0">
+              <Card className="bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                   <CardTitle className="text-sm font-medium text-gray-900">Current Mood</CardTitle>
                   <Target className="h-4 w-4 text-green-600" />
@@ -149,20 +148,20 @@ const Dashboard = () => {
               </Card>
             </div>
 
-            {/* Quick Actions */}
-            <Card className="mb-8 bg-white/90 backdrop-blur-sm shadow-lg border-0">
+            {/* Quick Actions with enhanced styling */}
+            <Card className="mb-8 bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
               <CardHeader>
-                <CardTitle className="text-gray-900">Quick Actions</CardTitle>
+                <CardTitle className="text-gray-900 text-xl font-bold">Quick Actions</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                   {quickActions.map((action, index) => (
                     <Link key={index} to={action.href}>
-                      <div className="flex flex-col items-center p-4 rounded-lg hover:bg-gray-100/80 transition-colors backdrop-blur-sm">
-                        <div className={`w-12 h-12 ${action.color} rounded-full flex items-center justify-center mb-2 shadow-lg`}>
+                      <div className="flex flex-col items-center p-4 rounded-xl hover:bg-white/80 transition-all duration-300 backdrop-blur-sm border border-white/20 hover:shadow-lg">
+                        <div className={`w-12 h-12 ${action.color} rounded-full flex items-center justify-center mb-2 shadow-lg hover:scale-110 transition-transform duration-300`}>
                           <action.icon className="w-6 h-6 text-white" />
                         </div>
-                        <span className="text-sm font-medium text-center text-gray-900">{action.title}</span>
+                        <span className="text-sm font-medium text-center text-gray-900 drop-shadow-sm">{action.title}</span>
                       </div>
                     </Link>
                   ))}
@@ -170,44 +169,48 @@ const Dashboard = () => {
               </CardContent>
             </Card>
 
-            {/* Main Content Grid */}
+            {/* Main Content Grid with enhanced styling */}
             <div className="grid lg:grid-cols-2 gap-8 mb-8">
-              <MoodTracker />
-              <Goals />
+              <div className="bg-white/95 backdrop-blur-lg rounded-lg shadow-2xl border-0 ring-1 ring-white/20">
+                <MoodTracker />
+              </div>
+              <div className="bg-white/95 backdrop-blur-lg rounded-lg shadow-2xl border-0 ring-1 ring-white/20">
+                <Goals />
+              </div>
             </div>
 
-            {/* Achievements */}
-            <div className="mb-8">
+            {/* Achievements with enhanced styling */}
+            <div className="mb-8 bg-white/95 backdrop-blur-lg rounded-lg shadow-2xl border-0 ring-1 ring-white/20">
               <Achievements />
             </div>
 
-            {/* Today's Recommendations */}
-            <Card className="bg-white/90 backdrop-blur-sm shadow-lg border-0">
+            {/* Today's Recommendations with enhanced styling */}
+            <Card className="bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
               <CardHeader>
                 <CardTitle className="text-gray-900 font-bold text-2xl">Recommended for You Today</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 rounded-lg bg-gray-100/80 backdrop-blur-sm">
+                  <div className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-green-50/90 to-blue-50/90 backdrop-blur-sm border border-white/30">
                     <div>
                       <h3 className="text-gray-900 font-bold">Morning Breathing Exercise</h3>
                       <p className="text-sm text-gray-700">5 minutes • Reduce anxiety</p>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">Start</Button>
+                    <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white shadow-md">Start</Button>
                   </div>
-                  <div className="flex items-center justify-between p-4 rounded-lg bg-gray-100/80 backdrop-blur-sm">
+                  <div className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-purple-50/90 to-pink-50/90 backdrop-blur-sm border border-white/30">
                     <div>
                       <h3 className="text-gray-900 font-semibold">Mindful Check-in</h3>
                       <p className="text-sm text-gray-700">10 minutes • Emotional awareness</p>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">Start</Button>
+                    <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white shadow-md">Start</Button>
                   </div>
-                  <div className="flex items-center justify-between p-4 rounded-lg bg-gray-100/80 backdrop-blur-sm">
+                  <div className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-indigo-50/90 to-blue-50/90 backdrop-blur-sm border border-white/30">
                     <div>
                       <h3 className="text-gray-900 font-bold">Sleep Meditation</h3>
                       <p className="text-sm text-gray-700">15 minutes • Better sleep</p>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">Start</Button>
+                    <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white shadow-md">Start</Button>
                   </div>
                 </div>
               </CardContent>

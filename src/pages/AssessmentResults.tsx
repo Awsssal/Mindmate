@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -50,20 +49,31 @@ const AssessmentResults = () => {
   };
 
   return (
-    <div className="min-h-screen bg-mindmate-warm-white flex items-center justify-center px-4">
-      <div className="w-full max-w-2xl space-y-6">
-        {/* Wellness Score */}
-        <Card>
+    <div 
+      className="min-h-screen flex items-center justify-center px-4 relative"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop&crop=center')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Enhanced blurred overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/50 via-blue-900/40 to-teal-900/50 backdrop-blur-md"></div>
+      
+      <div className="w-full max-w-2xl space-y-6 relative z-10">
+        {/* Wellness Score with enhanced styling */}
+        <Card className="bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
           <CardHeader className="text-center">
-            <CardTitle className="text-3xl">Your Wellness Score</CardTitle>
+            <CardTitle className="text-3xl text-gray-900 font-bold">Your Wellness Score</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
-              <div className="text-6xl font-bold text-mindmate-green mb-4">
+              <div className="text-6xl font-bold text-green-600 mb-4 drop-shadow-sm">
                 {Math.round(wellnessScore)}
               </div>
-              <Progress value={wellnessScore} className="w-full mb-4" />
-              <p className="text-gray-600">
+              <Progress value={wellnessScore} className="w-full mb-4 h-3" />
+              <p className="text-gray-700 font-medium">
                 {wellnessScore >= 80 ? "Excellent mental wellness!" :
                  wellnessScore >= 60 ? "Good foundation with room for growth" :
                  wellnessScore >= 40 ? "Some areas need attention" : 
@@ -73,27 +83,27 @@ const AssessmentResults = () => {
           </CardContent>
         </Card>
 
-        {/* Recommended Program */}
-        <Card>
+        {/* Recommended Program with enhanced styling */}
+        <Card className="bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
           <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
+            <CardTitle className="flex items-center space-x-2 text-gray-900">
               <recommendedProgram.icon className={`w-6 h-6 ${recommendedProgram.color}`} />
               <span>Recommended Program</span>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <h3 className="text-xl font-semibold mb-2">{recommendedProgram.name}</h3>
-              <p className="text-gray-600 mb-4">{recommendedProgram.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">{recommendedProgram.name}</h3>
+              <p className="text-gray-700 mb-4 font-medium">{recommendedProgram.description}</p>
             </div>
             
             <div>
-              <h4 className="font-medium mb-2">Program Focus Areas:</h4>
+              <h4 className="font-medium mb-2 text-gray-900">Program Focus Areas:</h4>
               <ul className="space-y-2">
                 {recommendedProgram.focus.map((item, index) => (
                   <li key={index} className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-mindmate-green" />
-                    <span>{item}</span>
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span className="text-gray-700 font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -101,11 +111,11 @@ const AssessmentResults = () => {
           </CardContent>
         </Card>
 
-        {/* Key Insights */}
-        <Card>
+        {/* Key Insights with enhanced styling */}
+        <Card className="bg-white/95 backdrop-blur-lg shadow-2xl border-0 ring-1 ring-white/20">
           <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
-              <Brain className="w-6 h-6 text-mindmate-blue" />
+            <CardTitle className="flex items-center space-x-2 text-gray-900">
+              <Brain className="w-6 h-6 text-blue-600" />
               <span>Key Insights</span>
             </CardTitle>
           </CardHeader>
@@ -114,30 +124,30 @@ const AssessmentResults = () => {
               {score <= 3 && (
                 <p className="flex items-start space-x-2">
                   <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                  <span>You show strong emotional resilience and good coping strategies.</span>
+                  <span className="text-gray-700 font-medium">You show strong emotional resilience and good coping strategies.</span>
                 </p>
               )}
               {score > 3 && score <= 7 && (
                 <p className="flex items-start space-x-2">
                   <Target className="w-5 h-5 text-yellow-600 mt-0.5" />
-                  <span>You have a solid foundation but could benefit from stress management techniques.</span>
+                  <span className="text-gray-700 font-medium">You have a solid foundation but could benefit from stress management techniques.</span>
                 </p>
               )}
               {score > 7 && (
                 <p className="flex items-start space-x-2">
                   <Heart className="w-5 h-5 text-red-600 mt-0.5" />
-                  <span>You're experiencing significant stress. Daily support and coping strategies will help.</span>
+                  <span className="text-gray-700 font-medium">You're experiencing significant stress. Daily support and coping strategies will help.</span>
                 </p>
               )}
             </div>
           </CardContent>
         </Card>
 
-        {/* Action Button */}
+        {/* Action Button with enhanced styling */}
         <div className="text-center">
           <Button 
             onClick={handleStartJourney}
-            className="bg-black hover:bg-gray-800 text-white px-8 py-3 text-lg"
+            className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg shadow-2xl hover:scale-105 transition-all duration-300"
           >
             Start Your Wellness Journey
           </Button>
